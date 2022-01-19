@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Policies;
+
+use App\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
+use Auth;
+
+class UserPolicy
+{
+    use HandlesAuthorization;
+
+    public function edit(User $currentUser ,User $user ){
+
+        return $currentUser->is($user);
+
+    }
+
+
+}
